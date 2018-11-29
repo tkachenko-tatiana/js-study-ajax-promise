@@ -4,7 +4,7 @@
 // Оберните все это в промис. Пусть промис выполнится успешно, если сгенерировано число от 1 до 5, 
 // и с ошибкой - если от 6 до 10.
 function randomNumberHandler() {
-
+    console.log("randomNumberHandler");
 }
 
 randomNumberHandler();
@@ -12,7 +12,7 @@ randomNumberHandler();
 // task 2
 //Напишите функцию delay, которая принимает задержку и функцию и выполняет ее после заданной задержки
 function delay (ms, callback) {
-
+    console.log(ms, callback);
 }
 
 delay();
@@ -21,7 +21,7 @@ delay();
 // Напишите функцию которая принимает число и и через каждые 3 секунды 2 раза возводит число в квадрат
 // и выводит промежуточные и конечный результат в консоль.
 function squarePow (num) {
-
+    console.log(num);
 }
 
 squarePow();
@@ -38,7 +38,13 @@ const delay2 = () => {};
 const delay3 = () => {};
 
 function sum (term1, term2, term3) {
-
+    console.log(term1, term2, term3);
 }
 
 sum(delay1, delay2, delay3);
+
+export {
+    randomNumberHandler,
+    delay
+};
+

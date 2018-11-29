@@ -44,6 +44,8 @@ function getProductsList() {
 
 }
 
+getProductsList();
+
 function showProducts () {
 
 }
