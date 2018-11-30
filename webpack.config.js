@@ -2,40 +2,34 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const webpackConfig = () => {
-    const entry = "./exports.js";
-
     const config = {
+        devServer: {
+            contentBase: "./dist",
+            port: 9000,
+        },
         mode: "development",
-        entry: entry,
+        entry: {
+            main: "./src/index.js",
+        },
         output: {
-            path: path.resolve(__dirname, "public/js"),
+            filename: "[name].js",
+            path: path.join(__dirname, "dist"),
             devtoolModuleFilenameTemplate: info =>
                 path.resolve(info.absoluteResourcePath).replace(/\\/g, "/"),
         },
         module: {
             rules: [
                 {
-                    test: /\.m?js$/,
-                    exclude: /(node_modules)/,
-                    use: {
-                      loader: "babel-loader",
-                    }
-                  }
+                    test: /\.js$/,
+                    exclude: /node_modules/,
+                    use: ["babel-loader"],
+                }
             ],
-        },
-        resolve: {
-            extensions: [".js"],
-            modules: [path.resolve(__dirname, "src"), "node_modules"],
         },
         stats: {
             colors: true,
         },
         devtool: "source-map",
-        devServer: {
-            contentBase: path.join(__dirname, "public"),
-            compress: true,
-            port: 9000,
-        },
         plugins: [
             new HtmlWebpackPlugin({
                 template: "./public/index.html",

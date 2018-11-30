@@ -7,15 +7,11 @@ function randomNumberHandler() {
     console.log("randomNumberHandler");
 }
 
-randomNumberHandler();
-
 // task 2
 //Напишите функцию delay, которая принимает задержку и функцию и выполняет ее после заданной задержки
 function delay (ms, callback) {
     console.log(ms, callback);
 }
-
-delay();
 
 // task 3
 // Напишите функцию которая принимает число и и через каждые 3 секунды 2 раза возводит число в квадрат
@@ -23,8 +19,6 @@ delay();
 function squarePow (num) {
     console.log(num);
 }
-
-squarePow();
 
 // task 4
 // Напишите 3 промиса, в каждом из которых расположена функция setTimeout со случайно задержкой от 1 до 5 секунд. 
@@ -41,10 +35,13 @@ function sum (term1, term2, term3) {
     console.log(term1, term2, term3);
 }
 
-sum(delay1, delay2, delay3);
-
 export {
     randomNumberHandler,
-    delay
+    delay,
+    squarePow,
+    delay1,
+    delay2,
+    delay3,
+    sum,
 };
 
